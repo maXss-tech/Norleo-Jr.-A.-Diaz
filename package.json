@@ -1,0 +1,20 @@
+{
+  "name": "jr-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio - Norleo Jr. A. Diaz | JR folder - index.html, jr.jpg, script.js, style.css",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server ."
+  },
+  "keywords": [
+    "portfolio",
+    "norleo-diaz",
+    "jr",
+    "web-developer",
+    "html-css-js"
+  ],
+  "author": "Norleo Jr. A. Diaz <norleojrd@gmail.com>",
+  "license": "MIT",
+  "type": "module"
+}
