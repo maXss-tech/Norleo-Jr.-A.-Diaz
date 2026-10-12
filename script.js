@@ -1,25 +1,24 @@
-// Only job: let you click the circle to add a profile photo.
+// ===== PERMANENT PROFILE PHOTO - uses real jr.jpg/png file =====
 const avatar = document.getElementById("avatar");
 const input = document.getElementById("photoInput");
 
 function showPhoto(src) {
-  avatar.innerHTML = '<img src="' + src + '" alt="Norleo Jr. A. Diaz">';
+  avatar.innerHTML = '<img src="' + src + '" alt="Norleo Jr. A. Diaz" onerror="this.onerror=null;this.src=\'jr.png\'">';
   avatar.appendChild(input);
 }
 
-try { const saved = localStorage.getItem("pfp"); if (saved) showPhoto(saved); } catch (e) {}
+// ALWAYS load the real file from your repo - this is permanent for everyone
+showPhoto("jr.jpg");
 
 input.addEventListener("change", () => {
   const file = input.files[0];
   if (!file) return;
   const reader = new FileReader();
   reader.onload = () => {
-    showPhoto(reader.result);
-    try { localStorage.setItem("pfp", reader.result); } catch (e) {}
+    showPhoto(reader.result); // preview only, not saved to localStorage anymore
   };
   reader.readAsDataURL(file);
 });
-
 
 // ===== 1. Typing effect (hero) =====
 const roles = ["Web Developer", "React Enthusiast", "Tailwind & Bootstrap Fan", "Lifelong Learner"];
